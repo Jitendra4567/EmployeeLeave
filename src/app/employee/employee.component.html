@@ -1,0 +1,38 @@
+<div class="my-3">
+    <div class="container">
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="m-0">Employee</h5>
+                <button class="btn btn-primary" routerLink="/add-employee">Add Employee</button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Employee Id</th>
+                                <th>Employee Name</th>
+                                <th>Dept Name</th>
+                                <th>Contact No</th>
+                                <th>Email Id</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(emp of employee; track emp){
+                                <tr>
+                                    <td>{{ emp.employeeId }}</td>
+                                    <td>{{ emp.employeeName }}</td>
+                                    <td>{{ emp.deptName }}</td>
+                                    <td>{{ emp.contactNo }}</td>
+                                    <td>{{ emp.emailId }}</td>
+                                    <td>{{ emp.role }}</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

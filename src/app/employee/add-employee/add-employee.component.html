@@ -1,0 +1,84 @@
+<div class="my-3">
+    <div class="container">
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="m-0">Add Employee</h5>
+                <button class="btn btn-primary" routerLink="/employee">Back</button>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="employeeForm">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-labrl">Name</label>
+                                <input type="text" formControlName="employeeName" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-labrl">Contact No</label>
+                                <input type="text" formControlName="contactNo" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-labrl">Email Id</label>
+                                <input type="text" formControlName="emailId" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-label">Department</label>
+                                <select formControlName="deptId" class="form-select">
+                                    @for(dep of departments; track dep){
+                                        <option [value]="dep.deptId">{{ dep.deptName }}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="text" formControlName="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-label">Gender</label>
+                                <div class="d-flex">
+                                    <div class="form-check me-3">
+                                        <input class="form-check-input" type="radio" value="Male"
+                                            id="Male" formControlName="gender">
+                                        <label class="form-check-label" for="Male">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="Female"
+                                            id="Female" formControlName="gender">
+                                        <label class="form-check-label" for="Female">
+                                            Female
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label class="form-label">Role</label>
+                                <select class="form-select" formControlName="role">
+                                    @for(role of employeeRole; track role){
+                                        <option [value]="role">{{ role }}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" (click)="addEmployee()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
