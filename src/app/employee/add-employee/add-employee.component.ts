@@ -28,7 +28,7 @@ export class AddEmployeeComponent {
     this.employeeForm = this.formBuilder.group({
       employeeId:[0],
       employeeName: [''],
-      contactNo:[0],
+      contactNo:[],
       emailId:[''],
       deptId:[0],
       password:[''],
